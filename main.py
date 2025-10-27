@@ -5,9 +5,15 @@ from config import TORTOISE_ORM
 from config import init_db
 from schemas import Author_Pydantic,AuthorIn_Pydantic
 from models.author_model import Author
+from auth import router as auth_router
+from auth import get_current_user
 app = FastAPI()
 
 init_db(app)
+
+
+# Include authentication routes
+app.include_router(auth_router, prefix="/auth", tags=["Auth"])
 
 @app.get("/")
 async def hello():

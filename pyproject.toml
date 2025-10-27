@@ -8,13 +8,24 @@ readme = "README.md"
 [tool.poetry.dependencies]
 python = "^3.12"
 aerich = "^0.9.2"
+pyjwt = "^2.10.1"
+python-multipart = "^0.0.20"
+bcrypt = "4.0.1"
+tomlkit = "^0.13.3"
 
+[tool.poetry.dependencies.passlib]
+extras = ["bcrypt"]
+version = "^1.7.4"
+
+[tool.poetry.dependencies.python-jose]
+extras = ["cryptography"]
+version = "^3.5.0"
+
+[tool.aerich]
+tortoise_orm = "main.TORTOISE_ORM"
+location = "./migrations"
+src_folder = "./."
 
 [build-system]
 requires = ["poetry-core"]
 build-backend = "poetry.core.masonry.api"
-
-[tool.aerich]
-tortoise_orm = "config.TORTOISE_ORM"
-location = "./migrations"
-src_folder = "./."
