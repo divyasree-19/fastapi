@@ -12,6 +12,9 @@ pyjwt = "^2.10.1"
 python-multipart = "^0.0.20"
 bcrypt = "4.0.1"
 tomlkit = "^0.13.3"
+fastapi = "^0.121.0"
+tortoise-orm = "^0.25.1"
+uvicorn = "^0.38.0"
 
 [tool.poetry.dependencies.passlib]
 extras = ["bcrypt"]
